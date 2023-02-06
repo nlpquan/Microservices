@@ -1,0 +1,10 @@
+.card-img-top {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 19vh;
+}
+
+.bodyContainer {
+	margin-top: 15%;
+}

@@ -1,0 +1,119 @@
+<html xmnls:th="http://www.thymeleaf.org">
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+
+ <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+ 
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+</head>
+
+<body style="font-family: Montserrat, sans-serif">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a href="/" class="navbar-brand">
+        	<img height="90" th:src="@{/images/logo.png}">
+        </a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+                <a href="/" class="nav-item nav-link">Home</a>
+                <a href="#" class="nav-item nav-link active">About</a>
+                <a href="/listing" class="nav-item nav-link">Listings</a>
+            </div>
+            <div class="navbar-nav ms-auto">
+                <a href="/dashboard" class="nav-item nav-link">Dashboard</a>
+            </div>
+        </div>
+    </div>
+	</nav>
+	
+	<div class="container">
+		<div class="row">
+			<div data-aos="fade-down" data-aos-duration="3000" class="row mb-4">
+				<h1 class="mt-5 text-center">About Us</h1>			
+			</div>
+			<div data-aos="fade-up" data-aos-duration="3000" class="row mb-4">
+				<p class="me-5 pe-5">Founded in 2022 and located at Grand Canyon University, Phoenix, Arizona.
+				ComputerParts specializes in making buying Computer Parts an easy experience, with affordable prices,
+				and fast shipping. We offer listings from different sellers and give each seller the opportunity to market 
+				their items. 
+				</p>			
+			</div>
+			<div data-aos="fade-up" data-aos-duration="3000" class="row mb-4">
+				<p class="me-5 pe-5">Here at ComputerParts, you can find great deals rather than having to pay for resell prices on 
+				hot ticket items, such as Graphics Cards, Processors, RAM, Storage, Motherboard, and Power Supplies. No other
+				company compares to the prices of our sellers, ComputerParts is the easiest way to sell your products and buy products
+				with the fastest, easiest inteface possible.
+				</p>			
+			</div>	
+		</div>
+		
+		<div class="row">
+			<h1 data-aos="zoom-in" data-aos-duration="3000" class="mt-5 text-center">Our Founders</h1>
+			<div data-aos="zoom-in" data-aos-duration="3000" class="col">
+				<div class="card border-0 shadow-lg pt-5 my-5 position-relative" style="max-height: 100%">
+				    <div class="card-body p-4">
+					    <div class="position-absolute w-100 text-center">
+					        <img class="rounded-circle mx-auto shadow-sm" alt="">
+				        </div>
+					    <div class="card-text pt-1">
+						    <h5 class="mb-0 text-center text-primary font-weight-bold">Ivan Gudino</h5>
+						    <div class="mb-3 text-center">Co-founder / CEO</div>
+						    <div>Hi, I'm Ivan and I am currently a Junior at Grand Canyon University. I am majoring in Software Development
+						    and I am really enjoying this field. My favorite programming lanugage is Java and I learned to love its feature and its
+						    object oriented principles. I have huge interests in learning React JS, and Python.
+						    I was born here in Phoenix, Arizona and I have 2 siblings. I went to Saint Mary's High School and gladly made it to 
+						    Grand Canyon University. I can't wait to join the industry!
+						    </div>
+					    </div>
+				    </div>
+				    <div class="card-footer theme-bg-primary border-0 text-center">
+				        <section>
+				          <a class="btn btn-link btn-floating btn-sm text-dark m-1" href="https://www.facebook.com/ivangudino123/" role="button"><i class="bi bi-facebook"></i></a>
+				          <a class="btn btn-link btn-floating btn-sm text-dark m-1" href="https://twitter.com/igudino2002"role="button"><i class="bi bi-twitter"></i></a>
+				          <a class="btn btn-link btn-floating btn-sm text-dark m-1" href="https://github.com/Raptas1" role="button"><i class="bi bi-github"></i></a>
+				          <a class="btn btn-link btn-floating btn-sm text-dark m-1" href="#!" role="button"><i class="bi bi-instagram"></i></a>
+				          <a class="btn btn-link btn-floating btn-sm text-dark m-1" href="#!" role="button"><i class="bi bi-linkedin"></i></a>
+				        </section>
+				    </div>
+			    </div>		
+			</div>
+			<div data-aos="zoom-in" data-aos-duration="3000" class="col">
+				<div class="card border-0 shadow-lg pt-5 my-5 position-relative" style="max-height: 100%">
+				    <div class="card-body p-4">
+					    <div class="position-absolute w-100 text-center">
+					        <img class="rounded-circle mx-auto shadow-sm" alt="">
+				        </div>
+					    <div class="card-text pt-1">
+						    <h5 class="mb-0 text-center text-primary font-weight-bold">Quan Nguyen</h5>
+						    <div class="mb-3 text-center">Co-founder / CEO</div>
+						    <div>Hi there, my name is Quan, currently a senior in Grand Canyon University. I have a deep passion in computer programming and everything about internet. My goals are to meet new people and explore new things that a computer can offer. Ever since I was a child, information about software and everything is always so big that one day I want to commit in it more and more. Always remember this: "Before software can be reusable it first has to be usable".</div>
+					    </div>
+				    </div>
+				    <div class="card-footer theme-bg-primary border-0 text-center">
+				        <section>
+				          <a class="btn btn-link btn-floating btn-sm text-dark m-1" href="#!" role="button"><i class="bi bi-facebook"></i></a>
+				          <a class="btn btn-link btn-floating btn-sm text-dark m-1" href="#!"role="button"><i class="bi bi-twitter"></i></a>
+				          <a class="btn btn-link btn-floating btn-sm text-dark m-1" href="#!" role="button"><i class="bi bi-github"></i></a>
+				          <a class="btn btn-link btn-floating btn-sm text-dark m-1" href="#!" role="button"><i class="bi bi-instagram"></i></a>
+				          <a class="btn btn-link btn-floating btn-sm text-dark m-1" href="#!" role="button"><i class="bi bi-linkedin"></i></a>
+				        </section>
+				    </div>
+			    </div>					
+			</div>
+		</div>
+	</div>
+	
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  	<script>
+    	AOS.init();
+  	</script> 
+</body>
+
+
+</html>

@@ -1,0 +1,80 @@
+<html xmnls:th="http://www.thymeleaf.org">
+<head>
+
+<!--Bootstrap-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+<!--ChartsJs -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script   src="https://code.jquery.com/jquery-3.6.1.min.js"   integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="   crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready(function(){
+        $("#deleteModal").modal('show');
+    });
+</script>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+</head>
+
+<body style="font-family: Montserrat, sans-serif">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a href="/dashboard" class="navbar-brand">
+        	<img height="90" th:src="@{/images/logo.png}">
+        </a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+                <a th:href="@{../dashboard}" class="nav-item nav-link">Dashboard</a>
+                <a href="#" class="nav-item nav-link active">My Listings</a>
+                <a th:href="@{../listings}" class="nav-item nav-link">Listings</a>
+                <a th:href="@{../create}" class="nav-item nav-link">Create</a>
+            </div>
+            <div class="navbar-nav ms-auto">
+            	<i class="nav-item nav-link bi bi-bell-fill">
+            		<span class="position-absolute start-1 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
+            	</i>
+            	
+            	<div class="dropdown">
+            	  <a class="nav-item nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            	  	<i class="bi bi-person-fill"></i>
+            	  	
+  				  </a>
+				  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
+				    <li><a class="dropdown-item" href="#">My Profile</a></li>
+				    <li><a class="dropdown-item" href="#">Settings</a></li>
+				    <li><a class="dropdown-item" href="/logout">Logout</a></li>
+				  </ul>
+				</div>
+				
+            </div>
+        </div>
+    </div>
+	</nav>
+	<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  		<div class="modal-dialog">
+   			<div class="modal-content">
+		      	<div class="modal-header">
+		        	<h5 class="modal-title" id="deleteModalLabel">Are You Sure?</h5>
+		        	<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		      	</div>
+		      	<div class="modal-body">
+			      	<form action="#" th:action="@{deleteSuccess}" th:object="${listingModel}" method="post">
+			      		<input type="hidden" class="form-control disabled" th:field="*{id}">
+				        Are you sure you want to delete this listing?
+				      	</div>
+				      	<div class="modal-footer">
+				        	<a th:href="@{./myListings}" class="btn btn-danger">No</a>
+				        	<button type="submit" class="btn btn-success">Yes</button>
+				    	</div>		      	
+			    </form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

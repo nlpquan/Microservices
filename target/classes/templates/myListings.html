@@ -1,0 +1,91 @@
+<html xmnls:th="http://www.thymeleaf.org">
+
+<head>
+
+	<!--Bootstrap-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+		crossorigin="anonymous"></script>
+
+	<!--ChartsJs -->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+</head>
+
+<body style="font-family: Montserrat, sans-serif">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container-fluid">
+			<a href="/dashboard" class="navbar-brand">
+				<img height="90" th:src="@{/images/logo.png}">
+			</a>
+			<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<div class="navbar-nav">
+					<a th:href="@{../dashboard}" class="nav-item nav-link">Dashboard</a>
+					<a href="#" class="nav-item nav-link active">My Listings</a>
+					<a th:href="@{../dashboard/listings}" class="nav-item nav-link">Listings</a>
+					<a th:href="@{../dashboard/create}" class="nav-item nav-link">Create</a>
+					<a th:href="@{../dashboard/userList}" class="nav-item nav-link">User List</a>
+				</div>
+				<div class="navbar-nav ms-auto">
+					<i class="nav-item nav-link bi bi-bell-fill">
+						<span
+							class="position-absolute start-1 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
+					</i>
+
+					<div class="dropdown">
+						<a class="nav-item nav-link" href="#" role="button" data-bs-toggle="dropdown"
+							aria-expanded="false">
+							<i class="bi bi-person-fill"></i>
+
+						</a>
+						<ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark">
+							<li><a class="dropdown-item" href="#">My Profile</a></li>
+							<li><a class="dropdown-item" href="#">Settings</a></li>
+							<li><a class="dropdown-item" href="/logout">Logout</a></li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	<h1 class="mt-4 text-center">My Listings</h1>
+	<div class="text-center mt-4"><a class="btn btn-success" th:href="@{create}">Create Listing</a></div>
+
+	<div class="row justify-content-left">
+		<div align="center">
+			<div th:if="${listings.empty}">
+				<img th:src="@{/images/notavailable.png}" alt="Not Available">
+				<h5>No Listings Currently Available</h5>
+			</div>
+		</div>
+		<div th:each="listing : ${listings}" class="col-md-3 d-flex align-items-stretch">
+			<div class="card shadow text-center mt-5" style="width: 100%;">
+				<img th:src="@{/images/fav.png}" class="card-img-top img-fluid" alt="...">
+				<div class="card-body">
+					<h4 class="card-title text-success" th:text="${listing.name}">Listing</h4>
+					<p class="card-text text-muted" th:text="${listing.description}">Description</p>
+					<p class="card-text text-muted" th:text="|$${listing.price}|">Price</p>
+					<form action="#" th:action="@{editListing}" th:object="${listing}" method="post">
+						<input type="hidden" class="form-control disabled" th:value="*{id}" name="id">
+						<button type="submit" class="btn btn-warning form-control">Edit</button>
+					</form>
+					<form action="#" th:action="@{deleteListing}" th:object="${listing}" method="post">
+						<input type="hidden" class="form-control disabled" th:value="*{id}" name="id">
+						<button type="submit" class="btn btn-danger form-control">Delete</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>
